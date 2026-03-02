@@ -16,6 +16,11 @@ app.use(cors({
     credentials: true
 }));
 
+// Basic health check route for the root URL
+app.get('/', (req, res) => {
+    res.status(200).json({ message: 'KodFliex Auth API is running smoothly!' });
+});
+
 // User Registration Endpoint
 app.post('/signup', async (req, res) => {
     const { username, email, phone, password, confirmPassword } = req.body;
