@@ -4,6 +4,8 @@ import { User, Lock, Eye, EyeOff } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 export default function Signin() {
     const [formData, setFormData] = useState({
         username: '',
@@ -22,7 +24,7 @@ export default function Signin() {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:3000/signin', formData, {
+            const response = await axios.post(`${API_URL}/signin`, formData, {
                 withCredentials: true // Important for receiving the cookie
             });
 

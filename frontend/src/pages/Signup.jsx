@@ -4,6 +4,8 @@ import { User, Mail, Phone, Lock, Eye, EyeOff } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 export default function Signup() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -30,7 +32,7 @@ export default function Signup() {
 
         setIsLoading(true);
         try {
-            const response = await axios.post('http://localhost:3000/signup', formData);
+            const response = await axios.post(`${API_URL}/signup`, formData);
             if (response.status === 201) {
                 toast.success('Account created successfully!');
                 navigate('/signin');
