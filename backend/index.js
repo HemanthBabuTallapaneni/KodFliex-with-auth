@@ -12,7 +12,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'supersecret_jwt_key_for_kodfliex';
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173', // Vite default port for local development
+    origin: process.env.FRONTEND_URL || ['http://localhost:5173', 'https://kod-fliex-with-auth-jgz7.vercel.app'], // Dynamic or hardcoded
     credentials: true
 }));
 

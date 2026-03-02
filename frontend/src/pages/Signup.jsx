@@ -4,7 +4,7 @@ import { User, Mail, Phone, Lock, Eye, EyeOff } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://kod-fliex-with-auth.vercel.app';
 
 export default function Signup() {
     const navigate = useNavigate();
