@@ -15,7 +15,6 @@ export default function Signup() {
         password: '',
         confirmPassword: ''
     });
-    const [error, setError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -112,7 +111,7 @@ export default function Signup() {
                         <button
                             type="button"
                             className="input-icon"
-                            style={{ left: 'auto', right: '0.875rem', cursor: 'pointer', background: 'none', border: 'none', color: 'var(--text-secondary)' }}
+                            style={{ left: 'auto', right: '0.875rem', cursor: 'pointer', background: 'none', border: 'none', color: 'var(--text-muted)' }}
                             onClick={() => setShowPassword(!showPassword)}
                         >
                             {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
