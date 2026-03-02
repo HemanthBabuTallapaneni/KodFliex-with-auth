@@ -45,54 +45,56 @@ export default function Signin() {
     };
 
     return (
-        <div className="glass-panel">
-            <h2 className="title">Welcome Back</h2>
-            <p className="subtitle">Sign in to your KodFliex account</p>
+        <div className="auth-container">
+            <div className="glass-panel">
+                <h2 className="title">Sign In</h2>
+                <p className="subtitle">Unlimited movies, TV shows, and more.</p>
 
-            <form onSubmit={handleSubmit}>
-                <div className="input-group">
-                    <User className="input-icon" size={20} />
-                    <input
-                        type="text"
-                        name="username"
-                        placeholder="Username"
-                        className="glass-input"
-                        value={formData.username}
-                        onChange={handleChange}
-                        required
-                        autoComplete="username"
-                    />
-                </div>
+                <form onSubmit={handleSubmit}>
+                    <div className="input-group">
+                        <User className="input-icon" size={20} />
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            className="glass-input"
+                            value={formData.username}
+                            onChange={handleChange}
+                            required
+                            autoComplete="username"
+                        />
+                    </div>
 
-                <div className="input-group">
-                    <Lock className="input-icon" size={20} />
-                    <input
-                        type={showPassword ? "text" : "password"}
-                        name="password"
-                        placeholder="Password"
-                        className="glass-input"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                        autoComplete="current-password"
-                    />
-                    <button
-                        type="button"
-                        className="input-icon"
-                        style={{ left: 'auto', right: '0.875rem', cursor: 'pointer', background: 'none', border: 'none', color: 'var(--text-secondary)' }}
-                        onClick={() => setShowPassword(!showPassword)}
-                    >
-                        {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                    <div className="input-group">
+                        <Lock className="input-icon" size={20} />
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            name="password"
+                            placeholder="Password"
+                            className="glass-input"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                            autoComplete="current-password"
+                        />
+                        <button
+                            type="button"
+                            className="input-icon"
+                            style={{ left: 'auto', right: '0.875rem', cursor: 'pointer', background: 'none', border: 'none', color: 'var(--text-secondary)' }}
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                        </button>
+                    </div>
+
+                    <button type="submit" className="glass-button" disabled={isLoading}>
+                        {isLoading ? 'Signing In...' : 'Sign In'}
                     </button>
+                </form>
+
+                <div className="link-text">
+                    Don't have an account? <Link to="/signup">Sign up</Link>
                 </div>
-
-                <button type="submit" className="glass-button" disabled={isLoading}>
-                    {isLoading ? 'Signing In...' : 'Sign In'}
-                </button>
-            </form>
-
-            <div className="link-text">
-                Don't have an account? <Link to="/signup">Sign up</Link>
             </div>
         </div>
     );
